@@ -1,6 +1,6 @@
 {
-  "name": "hexo-reference",
-  "version": "1.0.4",
+  "name": "hexo-footnote",
+  "version": "1.0.0",
   "description": "A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kchen0x/hexo-reference.git"
+    "url": "https://github.com/guorant/hexo-footnote.git"
   },
   "keywords": [
     "hexo",
@@ -19,12 +19,12 @@
     "reference",
     "tooltip"
   ],
-  "author": "Kun Chen",
+  "author": "Yujun Long",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kchen0x/hexo-reference/issues"
+    "url": "https://github.com/guorant/hexo-footnote/issues"
   },
-  "homepage": "https://github.com/kchen0x/hexo-reference#readme",
+  "homepage": "https://github.com/guorant/hexo-footnote#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",
