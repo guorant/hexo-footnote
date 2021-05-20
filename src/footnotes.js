@@ -10,11 +10,11 @@ var md = require('markdown-it')({
  * @param {String} text
  * @returns {String} text
  */
-function renderFootnotes(text) {
+function renderFootnotes(text, config) {
     var footnotes = [];
-    var reFootnoteContent = /\[\^(\d+)\]: ?([\S\s]+?)(?=\[\^(?:\d+)\]|\n\n|$)/g;
-    var reInlineFootnote = /\[\^(\d+)\]\((.+?)\)/g;
-    var reFootnoteIndex = /\[\^(\d+)\]/g;
+    var reFootnoteContent = /\[\^(\w+)\]: ?([\S\s]+?)(?=\[\^(?:\w+)\]|\n\n|$)/g;
+    var reInlineFootnote = /\[\^(\w+)\]\((.+?)\)/g;
+    var reFootnoteIndex = /\[\^(\w+)\]/g;
     var html = '';
 
     // threat all inline footnotes
@@ -53,11 +53,12 @@ function renderFootnotes(text) {
     text = text.replace(reFootnoteIndex,
         function(match, index){
             var tooltip = indexMap[index].content;
-            return '<sup id="fnref:' + index + '">' +
-                '<a href="#fn:'+ index +'" rel="footnote">' +
+            return '<sup id="fnref:' + index + 
+                (config.location_target_class ? '" class="' + config.location_target_class : '')
+                + '">' + '<a href="#fn:'+ index +'" rel="footnote">' +
                 '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="'
                 + tooltip +
-                '">[' + index +']</span></a></sup>';
+                '">' + index +'</span></a></sup>';
         });
 
     // sort footnotes by their index
