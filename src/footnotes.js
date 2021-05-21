@@ -54,8 +54,8 @@ function renderFootnotes(text, config) {
         function(match, index){
             var tooltip = (indexMap[index] || {}).content || '';
             return '<sup id="fnref:' + index + 
-                (config.location_target_class ? '" class="' + config.location_target_class : '')
-                + '">' + '<a href="#fn:'+ index +'" rel="footnote">' +
+                (config.location_target_class ? '" class="' + config.location_target_class : '') + 
+                '">' + '<a href="#fn:'+ index +'" rel="footnote">' + 
                 '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="'
                 + tooltip +
                 '">' + index +'</span></a></sup>';
