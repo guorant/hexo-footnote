@@ -74,7 +74,7 @@ function renderFootnotes(text, config) {
         html += '.</span>';
         html += '<span style="display: inline-block; vertical-align: top; margin-left: 10px;">';
         html += md.renderInline(footNote.content.trim());
-        html += '<a href="#fnref:' + footNote.index + '" rev="footnote"> ↩</a></span></li>';
+        html += '<a href="#fnref:' + footNote.index + '" rev="footnote">↩</a></span></li>';
     });
 
     // add footnotes at the end of the content
